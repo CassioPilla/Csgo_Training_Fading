@@ -41,6 +41,8 @@ function broke()
 
 	local avgtime = i_breaktime - i_starttime;
 
+    i_avgtime = 0;
+
 	a_times.insert(0,avgtime);
 
 	if(a_times.len() > 10)
@@ -57,7 +59,7 @@ function broke()
 	print(a_maker[i_size]);
 	print(" : ");
 	printl(i_avgtime);
-	i_avgtime = 0;
+	
 
 	if(a_times.len() == 10)
 	{
@@ -78,6 +80,10 @@ function broke()
 		a_times.clear();
 		printl("Novo tamanho de Target")
 	}
+
+    
+
+    Entfire(a_maker[i_size], RunScriptCode,  create(), RandomFloat(0.5, 1.5), )
 }
 
 
