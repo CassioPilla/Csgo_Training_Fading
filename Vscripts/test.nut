@@ -5,16 +5,22 @@
 // t = table
 
 //Get the Entity values from the map.
-e_Target <- EntityGroup[0];
+e_script <- EntityGroup[0];
 e_maker_5x5 <- EntityGroup[1];
 e_maker_8x8 <- EntityGroup[2];
 e_maker_12x12 <- EntityGroup[3];
 e_maker_15x15 <- EntityGroup[4];
 e_maker_18x18 <- EntityGroup[5];
+e_maker_24x24 <- EntityGroup[5];
+e_maker_30x30 <- EntityGroup[5];
+e_maker_37x37 <- EntityGroup[5];
+e_Hits <- EntityGroup[9];
+e_Miss <-EntityGroup[10];
+
 
 //Array which is used to spawn the target, it has all sizes in it
-//Size = 		0			1				2				3			4
-a_maker <- [e_maker_5x5, e_maker_8x8, e_maker_12x12, e_maker_15x15, e_maker_18x18];
+//Size = 		0			1				2				3			4				5				6			7
+a_maker <- [e_maker_5x5, e_maker_8x8, e_maker_12x12, e_maker_15x15, e_maker_18x18, e_maker_24x24, e_maker_30x30, e_maker_37x37];
 
 //Variable with will be used to select with target size should be spawned
 i_size <- 2;
@@ -32,7 +38,7 @@ i_avgtime <- 0;
 //Max and Min values of X and Y for spawning the targets
 i_x_max <- 100;
 i_x_min <- -100;
-i_y_max <- 140;
+i_y_max <- 100;
 i_y_min <- 60;
 
 function broke()
@@ -40,6 +46,8 @@ function broke()
 	i_breaktime <- Time();
 
 	local avgtime = i_breaktime - i_starttime;
+
+    i_avgtime = 0;
 
 	a_times.insert(0,avgtime);
 
@@ -57,7 +65,7 @@ function broke()
 	print(a_maker[i_size]);
 	print(" : ");
 	printl(i_avgtime);
-	i_avgtime = 0;
+	
 
 	if(a_times.len() == 10)
 	{
@@ -70,13 +78,13 @@ function broke()
 		}
 		else
 		{
-			if(i_size < 4)
+			if(i_size < 7)
 				i_size = i_size + 1;
 			else
 				printl("Voce ja esta no maior alvo possivel");
 		}
 		a_times.clear();
-		printl("Novo tamanho de Target")
+		printl("Novo tamanho de Target");
 	}
 }
 

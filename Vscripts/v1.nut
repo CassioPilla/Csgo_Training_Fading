@@ -23,11 +23,16 @@ i_size <- 2;
 i_starttime <- Time();
 i_breaktime <- Time();
 
-//Array that stores the average time between all shoots separating by target size
-a_times <- [];
+//Table that stores the average time between all shoots separating by target size
+a_times <- [0,0,0,0,0];
 
-//Store the average time of the last 10 shoots.
+
 i_avgtime <- 0;
+
+//Array that is used to calculate the average of the last 10 spawn/hit times
+a_avgtime <- [];
+printl(a_avgtime.len());
+
 
 //Max and Min values of X and Y for spawning the targets
 i_x_max <- 100;
@@ -35,49 +40,44 @@ i_x_min <- -100;
 i_y_max <- 140;
 i_y_min <- 60;
 
+count <- 0;
 function broke()
 {
 	i_breaktime <- Time();
 
 	local avgtime = i_breaktime - i_starttime;
 
-	a_times.insert(0,avgtime);
+	i_avgtime = i_avgtime + avgtime;
 
-	if(a_times.len() > 10)
-		a_times.pop();
+	printl(avgtime);
 
-	foreach(val in a_times)
+	count++;
+
+	if(count == 5)
 	{
-		i_avgtime = i_avgtime + val;
-	}
-	
-	i_avgtime = i_avgtime / a_times.len();
+		i_avgtime = i_avgtime / 5;
 
-	print("Media de tempo para atingir o alvo ");
-	print(a_maker[i_size]);
-	print(" : ");
-	printl(i_avgtime);
-	i_avgtime = 0;
-
-	if(a_times.len() == 10)
-	{
 		if(i_avgtime < 1)
 		{
 			if(i_size > 0)
+			{
 				i_size = i_size - 1;
-			else
-				printl("Voce ja esta no menor alvo possivel");
+			}
+			
 		}
 		else
 		{
 			if(i_size < 4)
+			{
 				i_size = i_size + 1;
-			else
-				printl("Voce ja esta no maior alvo possivel");
+			}
 		}
-		a_times.clear();
-		printl("Novo tamanho de Target")
+
+		print("Media dos ultimos 5 : ");print(i_avgtime);
+		i_avgtime = 0;
+		count = 0;
 	}
+
 }
 
 
@@ -85,6 +85,7 @@ function create()
 {
 	local v1 = Vector(0, 0, 0);
 	local v0 = Vector(RandomInt(i_x_min,i_x_max), -127.5, RandomInt(i_y_min,i_y_max));
+	
 	
 	a_maker[i_size].SpawnEntityAtLocation(v0,v1);
 
