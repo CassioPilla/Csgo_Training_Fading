@@ -5,7 +5,6 @@
 // t = table
 
 //Get the Entity values from the map.
-e_script <- EntityGroup[0];
 e_maker_5x5 <- EntityGroup[1];
 e_maker_8x8 <- EntityGroup[2];
 e_maker_12x12 <- EntityGroup[3];
@@ -40,6 +39,10 @@ i_x_max <- 100;
 i_x_min <- -100;
 i_y_max <- 100;
 i_y_min <- 60;
+
+//hits and misses variables
+i_misses <- 0;
+i_hits <- 0;
 
 function broke()
 {
@@ -86,8 +89,13 @@ function broke()
 		a_times.clear();
 		printl("Novo tamanho de Target");
 	}
-}
 
+	i_hits = i_hits + 1;
+	local total_shoots = i_hits + i_misses;
+	print("Sua precisao atual e de ");
+	print((i_hits * 100) / total_shoots);
+	printl("%");
+}
 
 function create()
 {
@@ -97,4 +105,11 @@ function create()
 	a_maker[i_size].SpawnEntityAtLocation(v0,v1);
 
 	i_starttime <- Time();
+}
+
+
+function miss()
+{
+	i_misses = i_misses + 1;
+	printl("errou");
 }
