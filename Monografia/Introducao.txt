@@ -1,0 +1,13 @@
+
+\chapter{\label{chap:chap1}Introdução}
+
+Um dos principais aspectos dos jogos de tiro é a precisão dos disparos. Neste tipo de jogo, uma das formas de alcançar a vitória é eliminando a equipe adversária, tornando assim a acurácia fundamental para obter o resultado desejado.
+
+Sabendo do crescimento dos \textit{Esports} no últimos anos, a necessidade de treinamentos específicos para jogos se tornou necessária. Visto a importância da acurácia em jogos de tiro, este é o fundamento mais treinado pelos atletas profissionais, que utilizam o método de tentativa e erro para melhorar sua performance. Contudo, pela falta de métodos disponíveis para treinar, não é possível avaliar a eficácia deste treinamento.
+
+Este trabalho tem como objetivo comparar o método atual com uma nova proposta de treinamento de acurácia para os \textit{Esports}, através do esvanecimento. Utilizando mudanças graduais e progressivas na dificuldade do treinamento, este método é bastante utilizado para desenvolvimento de habilidades finas, como caligrafia, desenhos e até mesmo esportes.
+
+Para chegar ao objetivo proposto, é desenvolvido seguindo a metodologia \textit{Scrum}, um treinamento de acurácia por esvanecimento utilizando o jogo \textit{Counter-Strike:Global Offensive}. Este treinamento tem como cliente principal os \textit{Stormborns}, uma equipe semiprofissional, formada por brasileiros que competem nos EUA. Ao final do projeto, conseguiremos discriminar os dois tipos de treinamento.
+
+Este documento está dividido em 7 capítulos. O primeiro é a introdução do trabalho a ser realizado; o segundo explica os fundamentos necessários para a compreensão do artigo; o terceiro engloba as ferramentas utilizadas na execução do trabalho; o quarto apresenta os tipos de treinamentos e as técnicas de tiro; o quinto explica o sistema proposto englobando o mapa, a metodologia, o desenvolvimento e a infraestrutura do projeto; o sexto apresenta como são obtidos os dados do treinamento e como eles são analisados; e o sétimo exibe os objetivos alcançados na primeira etapa e os próximos a serem atingidos com a conclusão do trabalho.
+
