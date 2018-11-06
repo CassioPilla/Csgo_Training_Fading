@@ -1,0 +1,127 @@
+%----------------------------------------------------------------------------------
+% Exemplo do uso da classe tcc.cls. Veja o arquivo .cls
+% para mais detalhes e instruções.
+%----------------------------------------------------------------------------------
+\chapter{\label{chap:fund}FUNDAMENTAÇÃO TEÓRICA}
+% Comando para inserir siglas. Tanto as siglas quanto as
+% abreviaturas devem aparecer em ordem ALFABÉTICA nas listas
+% correspondentes. Como a classe no momento não é capaz de ordenar
+% as entradas automaticamente, existem duas alternativas:
+%
+%    a- Insira todas as siglas e abreviaturas no começo do texto,
+%    manualmente e em ordem alfabética.
+%
+%    b- Caso esteja em um ambiente UNIX (Linux, Mac ou Cygwin/similares),
+%    utilize o script sort.sh e o makefile que acompanham a
+%    classe. O makefile automaticamente compila a monografia para
+%    PDF (mas assume que o latex está acessível pela linha de
+%    comando). Neste caso a ordenação é feita de forma automática.
+%
+\sigla{Bots}{jogadores controlados pelo computador}
+\sigla{Esports}{Esporte Eletrônico}
+\sigla{FPS}{First Person Shooter}
+\sigla{CS:GO}{Counter Strike: Global Offensive}
+\sigla{CS}{Counter Strike}
+%
+% Comando para inserir abreviaturas.
+%
+
+%\abrev{CS}{Counter Strike}
+%
+% Comando para inserir símbolos. Estes irão aparecer em ordem
+% de ocorrência, já que o número da página está presente na lista
+% de símbolos.
+%\simbolo{Hz}{Hertz}
+%\simbolo{$\pi$}{Constante com valor aproximado de $3.1415926$}%
+%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\label{sec:esvan}Esvanecimento}
+
+O esvanecimento é um método no qual uma ação pode ser modificada de uma situação a outra a partir de mudanças graduais e progressivas dos estímulos, ou seja, utilizando sucessivas repetições é possível gradativamente modificar um estímulo ao ponto que seja possível obter a mesma resposta de um estímulo modificado ou até mesmo um novo estímulo.
+
+Esta técnica é bastante utilizada quando se quer desenvolver habilidades finas, como caligrafia, desenho ou esportes, de acordo com ~\cite{MATOS95}.
+\begin{directcite}
+O principio de mudanças e graduais deve ser seguido quando pretendemos alterar aspectos específicos do comportamento, podemos citar como exemplo a rapidez com que uma criança chuta uma bola, ou a potência do chute, sua direção, qual perna é usada, a posição especifica do pé, etc.
+\end{directcite}
+
+Segundo ~\cite{CATANIA99}, "O treino não tem que começar com estímulos que são difíceis de discriminar. Ele pode começar com aqueles que são fáceis de discriminar e, então, mudar gradualmente para estímulos mais difíceis.". Além disso, de acordo com ~\cite{MATOS95}, uma característica muito importante deste tipo de treinamento é o fato de trabalhar com indivíduos, ou seja, mesmo os princípios sendo gerais, o procedimento e a técnica refletem as características do sujeito individual, seguindo o ritmo e as características do progresso de cada indivíduo.
+
+Um exemplo de esvanecimento é uma professora de caligrafia ensinando a escrever a letra "A", onde, inicialmente ela desenha a letra grande e com linhas grossas e pede para a criança passar o lápis por cima, então, depois da criança dominar esta tarefa, ela vai gradualmente diminuindo o tamanho da letra e sua espessura. Enfim, a professora somente indica o local inicial onde a letra deve começar, ~\cite{MATOS95}.
+
+Como pode ser observado no trabalho de (basquete), onde o esvanecimento é aplicado ao treinamento de lance livre do basquete, o método apresentou um ganho quando comparado ao método tradicional. Outro exemplo é o (fisica), onde o esvanecimento adaptável foi comparado ao esvanecimento estático, mostrando que com o mesmo tempo de estudo e com acesso ao mesmo material, o esvanecimento adaptável se mostrou superior ao estático. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\label{sec:Esports}Esports}
+
+\textit{Esports} é o nome dado ao esporte eletrônico, esta modalidade tem atraído cada vez mais o público, chegando a marca de 258 milhões de jogadores ativos mensalmente em 2017, de acordo com ~\cite{YEAR17}. Com uma audiência deste tamanho, empresas investem cada vez mais neste mercado, que arrecadou U\$1.5 bilhões em 2017, de acordo com ~\cite{ESPORTS17}. Está pesquisa também revela que a tendência de crescimento do \textit{Esport} é de 26\% até 2020, chegando a U\$ 2.3 Bilhões. Isto se da pelo crescimento projetado de 12\% de audiência por ano e um crescimento no número de empresas investindo no setor. De acordo com ~\cite{YEAR17}, deste total de 258 Milhões de jogadores mensalmente, 43 milhões jogam CS:GO, tornando ele o sexto \textit{Esport} mais jogado no mundo.
+
+	O \textit{Esport} tem crescido cada vez mais nos últimos anos, com isso a premiação dos campeonatos também aumentaram, de acordo com ~\cite{DOTA2}, a maior premiação de um campeonato de \textit{Esport} foi superior a U\$ 23 milhões de dólares. Este valor foi obtido no campeonato mundial de DOTA 2 em 2017. DOTA 2, que assim como CS:GO, também é da empresa Valve. O artigo também cita que, este valor é superior a premiação do campeonato brasileiro de futebol de 2016, conhecido como Brasileirão. Enquanto a premiação do Brasileirão foi de R\$ 60 milhões, a do DOTA 2 foi superior a R\$ 73 milhões.
+    
+	De acordo com ~\cite{CSGOSALARY} jogadores profissionais de CS:GO, recebem em média, salários entre 4.000,00 e 6.000,00 dólares mensais, porém, este valor pode chegar até 27.000,00 dólares mensais para as melhores equipes, isto sem contar a premiação de campeonatos, que mesmo não chegando ao patamar das premiações de DOTA 2, podem chegar a marca de U\$ 1 milhão.
+    
+    De acordo com \cite{HOOKIT}, o \textit{streamer} Tyler Blevins, conhecido como "Ninja", foi a pessoa com maior número de interações nas redes sociais em abril de 2018, ele obteve 150,3 milhões de iterações, superando por 11 milhor o jogador de futebol Cristiano Ronaldo, que obteve 139,3 milhões de iterações no mesmo mês. Isto se reflete no faturamento mensal do \textit{streamer} que é superior a U\$ 600 milhões segundo \cite{FORBES}. Além disto, \textit{Ninja} quebrou o recorder de visualizações simultâneas do \textit{twitch} dia 14 de maio de 2018, ele chamou o cantor \textit{Drake} para participar de sua stream e conseguiu chegar a marca de 628 mil pessoas assistindo sua stream. Segundo \cite{FORBES}, ele adquiriu de 10 a 15 mil inscritos apenas neste dia, o que aumentou entre U\$ 30 a 45 mil o seu faturamento mensal.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\label{sec:CSGO}Counter Strike}
+
+
+\textit{Counter Strike: Global Offensive} é o último da franquia \textit{Counter Strike}, Primeiramente desenvolvido em 2000, \textit{Counter Strike} é um dos \textit{First Person Shooter} mais conhecidos do mundo, sendo jogado competitivamente até os 2012, quando CS:GO foi lançado. Mesmo sem ter campeonatos grandes desde 2012, segundo (esportsearnings), o Couter Strike obteve 820 torneios, jogados por 3455 jogadores rendendo 12,351,398.18 dolares para os participantes, figurando em sétimo colocado entre os jogos com maiores premiações. 
+
+	O jogo \textit{Counter Strike} é um  \textit{FPS} de objetivo, os jogadores são separados em duas equipes, terroristas e contra-terroristas, onde o objetivo de cada equipe é eliminar a equipe adversária. Uma partida de \textit{CS} possui no máximo 30 rodadas, onde quem chegar primeiro a 16 vence, em caso de empate, 15 a 15, existem duas possibilidades, ser declarado empate ou ir para prorrogação. A prorrogação consiste em seis rodadas. Caso ela termine em empate, haverá outras até que um dos times consiga vencer quatro das seis rodadas.
+\subsection{\label{sec:CS} Counter Strike: Global Offensive}
+	\textit{Counter strike: Global Offensive}, conhecido como \textit{CS:GO}, é o último jogo da série \textit{Counter Strike}, lançado em 2012, ele se diferenciou dos outros jogos da franquia pelo fato de ter um sistema de busca de partidas, tornando fácil e simples encontrar uma partida, invés de procurar servidores na comunidade sem saber o nível dos adversários. Este sistema permite que com dois cliques na tela, você consiga encontrar uma partida contra jogadores do mesmo nível. Isto fez com que o jogo se tornasse muito popular, atraindo jogadores de todos os níveis.
+   
+
+\subsection{\label{sec:modos}Modos de jogo}
+
+Existem diversos tipos de modos de jogo no CS:GO, estes modos estão divididos nos mapas do jogo, onde cada mapa utiliza um modo para ser jogado. Mesmo com mais de 10 tipos de jogos diferentes, apenas um é utilizado nos campeonatos, o modo de plantar a bomba:
+
+Para os terroristas vencerem, eles devem plantar a bomba e esperar 40 segundos até ela explodir. O objetivo dos contra-terroristas é desarmar a bomba caso ela seja plantada. Outro método de vitória é eliminando toda a equipe adversária.
+
+Porém, o CS:GO, assim como os outros jogos da franquia, permite que a comunidade crie e compartilhe mapas, com estes mapas, a comunidade cria cada vez mais modos de jogo, um dos modos mais importantes criados pela comunidade é o modo de treino, existem diversos mapas com diversas variações de treinamento. 
+    
+\subsection{\label{sec:fund}Fundamentos do jogador}
+
+Os fundamentos de um jogador de CS pode ser dividido em duas vertentes, a habilidade mecânica e a noção de jogo.
+
+A habilidade mecânica é o nível de controle que o jogador possui sobre o personagem, dentro desta vertente, encontram-se pontos como precisão, movimentação, controle de recuo da arma, reflexo e conceitos encontrados apenas no CS, como \textit{straife} e \textit{bhop}. Estas habilidades normalmente são treinadas individualmente por jogadores de CS.
+	
+ A noção de jogo se refere a percepção do jogador sobre o que esta acontecendo durante uma rodada e envolve fundamentos como posicionamento, estratégia do time e função do jogador dentro da equipe. Este tipo de habilidade normalmente é treinada em equipes, criando novas estratégias e métodos para tentar vencer as rodadas.
+ 
+ Neste trabalho foi implementado o treinamento sobre duas das principais habilidades mecânicas de um jogador, a precisão do primeiro tiro utilizando a pistola Glock-18 e o controle de recuo, sendo aplicado nos dois principais rifles do jogo, M4A4 e AK-47.
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
