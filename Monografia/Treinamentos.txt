@@ -1,0 +1,46 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{\label{sec:treino}Treinamento}
+
+Com a implementação do sistema de níveis no \textit{CS:GO}, os jogadores querem sempre melhorar para se posicionarem em níveis mais altos. Para isto ocorra, os jogadores precisam treinar. Vendo esta necessidade, a comunidade de CS:GO criou diversos mapas de treinamento, porém, a maior parte dos treinamentos utiliza a técnica de tentativa e erro.
+
+\section{\label{sec:atual}Treinamento atual}
+
+O treinamento atual dos jogadores profissionais de CS:GO consiste em, além de jogar partidas diariamente, utilizar mapas de treino. Existem diversos mapas de treino, porém em sua grande maioria, o jogador nasce em um local do mapa e o objetivo é matar o maior número de \textit{bots}(jogadores controlados pelo computador) possível, normalmente, em uma sessão de treino de um profissional, ele elimina em torno de mil \textit{bots} e dura em média de 15 a 20 minutos.
+
+\begin{figure}[htb]
+\begin{center}
+\Large Mapa de treinamento
+\end{center}
+\centering\includegraphics[width=.90\textwidth]{fig/mapa.jpg}
+\end{figure}
+
+Como podemos ver na imagem acima, o jogador nasce no centro do mapa, sem conseguir sair do quadrado central, seu objetivo é matar os \textit{bots} que vem em sua direção apenas com uma faca na mão, caso o jogador não consiga eliminar o \textit{bot} antes que ele chegue ao centro do mapa, ele é morto ao cair na vala situada entre o quadrado central e o resto do mapa. Utilizando este mapa, o jogador pode treinar vários estilos de tiro diferentes, como o \textit{spray}, \textit{burst} e \textit{one tap}, os mais utilizados nas partidas profissionais.
+
+\textit{Spray} é o nome dado a rajada de tiros tentando controlar o padrão de recuo da arma. Esta é a técnica mais difícil de dominar, visto que cada arma possui um padrão diferente, sendo necessário treinar com todas as armas mais utilizadas pelo jogador. Porém, mesmo dominando o padrão da arma, existe uma imprecisão nos tiros, esta imprecisão normalmente é retirada nos treinamentos utilizando um comando no mapa de treino, porém ela é presente durante as partidas, tornando o \textit{spray} uma técnica arriscada em partidas profissionais, utilizada normalmente quando há mais de um inimigo na sua tela, tornando mais rápida a transição da mira entre os inimigos.
+
+\textit{One tap} é uma técnica complicada de dominar, não é tão efetiva quanto o \textit{burst}, mas ela mostra a habilidade do jogador. Em jogos profissionais somente os melhores jogadores do mundo a utilizam, visto o seu alto risco quando não é totalmente dominada pelo jogador. Ela consiste em atirar somente uma vez na cabeça do adversário, tornando a transição entre inimigos muito rápida, porém, para se tornar eficaz, não pode haver erros. Mesmo não sendo muito utilizada profissionalmente ela é a técnica mais treinada, visto que ela necessita de uma reação e precisão muito elevados, além de ser adaptada para o \textit{burst} durante a partida.
+
+\textit{Burst} é a técnica mais utilizada pelos jogadores profissionais, ela consiste em atirar cerca de 6 tiros consecutivos, parar de atirar por meio segundo e atirar mais 6 tiros. Esta técnica é muito forte pois em quase todas as armas utilizadas em um jogo profissional, o recuo dos primeiros 6 a 9 tiros são retos para cima, sendo facilmente controlado com um movimento para baixo do \textit{mouse}. O intervalo entre os tiros é utilizado para reiniciar o recuo da arma, fazendo com que os próximos tiros sejam precisos, assim como os primeiros. Mesmo esta técnica sendo muito eficaz, ela é treinada em duas partes, a primeira no treinamento de \textit{one tap} aprimorando a reação e o primeiro tiro da técnica, e a segunda no treinamento de \textit{burst} aprendendo a controlar os primeiros tiros da arma.
+
+\begin{figure}[htb]
+\centering\includegraphics[width=.90\textwidth]{fig/100kills.jpg}
+\begin{center}
+Figura 5.1 – Desafio das 100 kills
+\end{center}
+\end{figure}
+
+O mapa mais utilizado para nivelar a acurácia dos jogadores pode ser visto na imagem acima, nele, o jogador tem como objetivo matar 100 \textit{bots} no menor tempo possível, não importando a arma ou a técnica de tiro.
+
+Mesmo não sendo o objetivo principal do desafio, jogadores utilizam ele para treinar, comparando seu tempo com o dos outros com o objetivo de nivelar sua acurácia. Para isso, eles utilizam este desafio junto das técnicas de tiro descritas acima, executando ele cada vez com uma técnica diferente, descobrindo sua habilidade com cada técnica.
+
+
+\section{\label{sec:esv}Treinamento adaptativo com esvanecimento}
+
+'O treinamento por esvanecimento pretende melhorar a acurácia do jogador através de uma mudança gradual da dificuldade do treino, transmitindo a acurácia de um alvo grande para um alvo pequeno, semelhante ao treinamento proposto em ~\cite{CEDRA07}, onde foi aplicado o esvanecimento para treinamento de lance livre do basquete, segundo o autor, o treinamento iniciava com uma cesta de basquete mais baixa e um aro com um raio maior que as medidas oficiais e ao longo do treinamento, de forma gradual e progressiva, o aro chegava as medidas oficiais do basquete.
+
+No treinamento proposto, o atleta pode utilizar as armas \textit{AK-47}, \textit{M4A4} ou \textit{M4A1-S}, as mais utilizadas no jogo. Em princípio, ele realiza alguns testes iniciais com o intuito de avaliar seu nível atual, estes testes também são utilizados para avaliar a evolução do atleta com o treinamento. Após ter seu nível avaliado, o mapa gera o treinamento ideal para o jogador.
+
+Assim como no treinamento desenvolvido por ~\cite{CEDRA07}, a dificuldade do treinamento é aumentada ao longo do tempo. No início, os alvos que aparecem na tela são grandes e com o tempo eles diminuem, aumentado a dificuldade de forma gradual e progressiva, minimizando o número de erros e dando estímulos sempre que o alvo for atingido corretamente. Com isso, conseguimos aplicar o esvanecimento ao treinamento.
+
+A técnica de tiro a ser utilizada neste treinamento é o \textit{one tap} com seu alto nível de dificuldade, está técnica é a que se tem maior espaço de crescimento. Pelo fato dela ser facilmente adaptada para outras técnicas como o \textit{burst}, aumentar o nível do \textit{one tap} melhora o nível geral de um jogador de CS:GO.
+
