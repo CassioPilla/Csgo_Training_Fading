@@ -1,0 +1,25 @@
+\chapter{\label{chap:TR}Trabalhos Relacionados}
+
+Neste capítulo é discutido os trabalhos e sistemas similares ao desenvolvido no projeto em questão. É apresetado o sistema seguido de uma conclusão de como ele foi utilizado para chegar ao produto final deste trabalho.
+
+\section{\label{SisSim}Sistemas}
+
+Durante o desenvolvimento do projeto, foi encontrado alguns sistemas similares ou que utilizam o mesmo método utilizado no trabalho. Eles se divertem em relação ao método utilizado, porem todos possuem a mudança dinâmica de dificuldade, podendo ser para mais difícil ou para mais fácil, dependendo do sistema.
+
+Um dos jogos mais conhecidos que utilizam esta dificuldade dinâmica é o \textit{Mario Kart}, um jogo de corrida da \textit{Nintendo}, no qual você pode utilizar itens que te auxiliam os jogadores durante a corrida, estes itens são divididos de acordo com a colocação do usuário na corrida, onde as ultimas colocações recebem os melhores itens, dando uma grande vantagem a eles para conseguir se recuperar na partida, enquanto isto, as primeiras colocações recebem os piores itens, dificultando se manter na liderança.
+
+Outro grande jogo que utiliza um sistema de dificuldade dinâmica é o Left 4 Dead, um jogo desenvolvido pelos mesmos criadores de \textit{Counter-Strike} elançado em 2008, este jogo utiliza um sistema chamado \textit{The AI Director} que segundo \cite{L4D09} este sistema cria uma experiência única cada vez que você joga o jogo, dependendo de sua performance o jogo pode criar mais oponentes e modificar a musica. Alem disso, o sistema detecta que o jogador esta muito tempo em um lugar e criar uma horda de inimigos para forçar os personagens a se mover, controlando o progresso do usuário.
+
+Um jogo que utiliza a metodologia de dificuldade dinâmica como sua principal característica é o \textit{Hello Neighbor}, de acordo com \cite{HNeigh} o objetivo deste jogo é invadir a casa do seu vizinho para desvendar os terríveis segredos que ele guarda no porão. Porem, a grande diferença deste jogo é que, segundo \cite{HNeigh2}, o computador aprende com todo os passos que o usuário tomar durante o jogo, toda vez que o usuário é capturado pelo vizinho, o jogo utiliza os dados do usuário e dificulta o jogo, aprendendo com cada erro ou acerto que o usuário cometeu.
+
+Alem dos exemplos já mostrados neste capítulo, há diversos outros exemplos de jogos que utilizam este sistema de dificuldade dinâmica, mostrando que este assunto é comum no mundo de desenvolvimento de jogos e apreciado pelos jogadores, tanto os casuais quanto aos profissionais. Todos estes sistemas possuem um ponto em comum, ajustar a dificuldade para que independente do nível de habilidade do usuário, todos tenham uma boa e cativante experiência do jogador, não deixando o jogo muito fácil a ponto do usuário perder interesse, nem muito difícil para o jogador não desistir do jogo.
+
+\section{\label{TraSim}Trabalhos}
+
+Alguns Artigos relacionados ao projeto foram utilizado durante o desenvolvimento, eles foram estudados e juntando os dois, foi possível surgir com o método utilizado para o desenvolvimento deste trabalho.
+
+O \cite{CEDRA07} é um estudo feito sobre a utilização de esvanecimento em um treinamento de lance livre de basquete. Neste treinamento de fading in estático, os doze jogadores foram separados em dois times, em um dos times foi utilizado o fading alterando a altura da cesta e no outro o diâmetro do aro. Em ambos os times, o fading foi o mesmo, tendo 9 etapas onde um atleta só avançava para a próxima quando atingir 70\% de acerto. Concluindo o treinamento, foi observado que no time onde o fading foi utilizado no diâmetro do aro, o ganho de performance foi superior.  
+
+Outro artigo utilizado foi o \cite{ADAP06}, nele é comparado o fading estático com o fading adaptável. Neste estudo foi utilizado questões de análises de circuito como tópico de aprendizagem. Os alunos participaram do estudo através de um computador, para minimizar o número de variáveis externas. Com a execução do estudo, foi visto que no mesmo período de tempo, o fading adaptável obteve resultados superiores ao fading estático.
+
+Como visto acima, dois artigos se diferem pelo modo de utilização do esvanecimento, enquanto o \cite{ADAP06} utiliza um fading out, o \cite{CEDRA07} utiliza um fading in. Em ambos, o método foi superior ao método comparado no problema, tendo em mente os tópicos abordados, exercícios de fisica e lance livre de basquete, foi escolhido o fading in no desenvolvimento deste trabalho pela semelhança ao problema utilizado no \cite{CEDRA07}; Entretanto, o fading utilizado no artigo relacionado ao lance livre foi estático e como visto no \cite{ADAP06}, o fading adaptável obteve resultados melhores, ou seja, neste trabalho, foi utilizado um fading in adaptável, tentando utilizar a melhor parte de ambos trabalhos estudados.
