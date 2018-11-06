@@ -1,0 +1,124 @@
+\chapter{\textit{}\label{chap:Prop}Implementação}
+
+Este capítulo apresenta todo o processo de desenvolvimento do mapa e a implementação das técnicas de ensino adaptativo e esvanecimento dentro do treinamento.
+
+\section{Ferramentas}
+
+Visto que o jogo possui uma arquitetura proprietária da \textit{Valve}, as ferramentas capazes de desenvolver o mapa também é propriedade da mesma. A ferramenta utilizada neste projeto foi o \textit{Valve Hammer Editor}, com ela foi possível desenvolver o mapa do jogo. Para implementar o treinamento, foi necessário utilizar desenvolver scripts chamados de \textit{Vscript}, eles foram desenvolvidos em Squirrel, e contém toda a lógica do treinamento.
+
+\subsection{\label{sec:VHE}Valve Hammer Editor}
+
+\textit{Valve Hammer Editor} é uma ferramenta disponibilizada pela \textit{Valve}, dona da franquia CS. Segundo ~\cite{HAMMER2017}, esta ferramenta permite criar e editar mapas para diversos jogos da \textit{Valve}, entre eles o CS:GO. Esta ferramenta é utilizada por toda a comunidade de CS desde antes do inicio da franquia, quando ela era utilizada no jogo \textit{Half-life}. Esta ferramenta é utilizada não só pela comunidade, mas também pelos desenvolvedores da Valve para criar os mapas dos jogos. De acordo com (https://developer.valvesoftware.com/wiki/Source), esta ferramenta engloba uma serie de jogos da \textit{Valve}, incluindo grandes nomes como \textit{Half-Life 2}, \textit{Portal}, \textit{Portal 2} e \textit{Left 4 Dead 2}.
+
+Como pode ser visto na figura 5.1, a ferramenta possui uma interface simples, porém completa. Ela possui quatro visões do mapa em desenvolvimento, sendo uma 3d e três 2d, englobando todos os ângulos necessários para que seja possível modificar qualquer parte do mapa. A ferramenta dispões em seu menu lateral esquerdo as principais funções para a criação de mapa, como a criação de um novo objeto ou estrutura, mudança e aplicação de novas texturas e a função de recortar uma estrutura ja criada, estas são as funções necessárias para todos que pretendem desenvolver um mapa utilizando esta ferramenta. O menu superior possui algumas funções mais complexas, como aumentar ou diminuir a grade de distancias das visões 2d, agrupar ou desagrupar entidades e estruturas, esconder certos tipos de objetos para facilitar a visualização do mapa, entre outras funções que não foram necessárias para o desenvolvimento do projeto.
+
+\begin{figure}[htb]
+\centering\includegraphics[width=.90\textwidth]{fig/hammer.jpg}
+\begin{center}
+Figura 5.1 – Valve Hammer Editor Interface
+\end{center}
+\end{figure}
+
+
+\subsection{\label{sec:script}Vscript}
+
+\textit{Vscript} são utilizados para criar novas funcionalidades dentro dos mapas, este tipo de \textit{script} é utilizado nos principais jogos da empresa Valve, como \textit{Left 4 Dead 2}, \textit{Portal 2}, \textit{CS:GO} e \textit{Dota 2} ~\cite{VSCRIPT}. Estes \textit{scripts} permitem criar ou modificar funcionalidades do jogo, como teletransportar o jogador, alterar a aparência da jogador ou até mesmo criar um jogo novo, como é o caso de \textit{Garry's Mod}, um jogo desenvolvido a partir do jogo \textit{Half-Life 2} e \textit{Vscript} desenvolvidas em lua, como descreve \cite{Garrymod}.
+
+De acordo com ~\cite{VSCRIPT}, os \textit{scripts} utilizam a linguagem \textit{Squirrel} ou \textit{lua}, Sendo o jogo o diferencial, enquanto \textit{CS:GO} e \textit{Left 4 Dead 2} utilizam \textit{Squirrel}, \textit{Dota 2} utiliza lua.
+
+Como pode ser visto no manual do Squirrel ~\cite{ManualSquirrel}, a linguagem é de alto nível e imperativa, desenvolvida para ser uma linguagem de scripts capaz de se adequar aos requisitos de jogos, como tamanho, consumo de memória e resposta em tempo real. Para alcançar estes requisitos, tanto o compilador quanto a máquina virtual possuem menos de seis mil linhas escritas em C++. Mas este tamanho não impede o \textit{Squirrel} de conseguir ser uma linguagem completa, oferecendo funcionalidades como recursão de calda, \textit{delegation}, manejo de memória automático, \textit{exception handling}, \textit{generators}, entre outros.
+
+
+
+\section{\label{chap:map}Treinamento Adaptativo}
+
+O treinamento desenvolvido é composto por um mapa desenvolvido utilizando a ferramenta \textit{Valve Hammer Editor}, juntamente com um \textit{Vscript} desenvolvido em \textit{Squirrel}.
+
+\subsection{Mapa}
+
+Durante o desenvolvimento do mapa, vários desafios foram aparecendo, o principal deles foi o fato de ter muita pouca documentação atualizada, visto que a maior parte das documentações, encontradas no \textit{youtube} datam entre 2012 e 2014, sendo a maior parte voltadas ao jogo \textit{Half-Life 2}, porém pela semelhanças dos jogos, foi possível adaptar a informação para o \textit{CS:GO}.
+
+O mapa foi desenvolvido utilizado as \textit{sprites} existentes na ferramenta \textit{Valve Hammer Editor}, que disponibiliza todas as \textit{sprites} utilizadas nos principais mapas dos principais jogos suportados pela ferramenta. Sendo assim, não foi necessário criar \textit{sprites} novas durante o desenvolvimento do mapa.
+
+\begin{figure}[htb]
+\centering\includegraphics[width=.80\textwidth]{fig/treinamento.jpg}
+\begin{center}
+Figura 5.1 – Mapa de treinamento
+\end{center}
+\end{figure}
+
+Existem dois tipos de treinamento dentro do mapa, um deles é o treinamento de reflexo e precisão,onde o jogador deve no menor tempo possível atingir os alvos que aparecem aleatoriamente na parede, treinando a técnica de \textit{One Tap}, o outro treinamento é o de controle de recuo, onde o jogador tenta controlar uma rajada de tiros mantendo a precisão no alvo, ela tem como objetivo treinar a técnica de \textit{Spray}, ambas técnicas são explicadas em explicado no \ref{sec:atual}.
+
+\subsection{Treinamento}
+
+O treinamento desenvolvido, como explicado no \ref{sec:script}, utiliza \textit{Vscript}. Ele foi desenvolvido utilizando a linguagem \textit{Squirrel} juntamente com entidades logicas e funcionais dentro mapa. Toda vez que o jogo carrega o mapa criado para o treinamento, a entidade logica \textit{Logic_Auto}, inicia o script do treinamento, além de executar alguns comandos que auxiliam 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\label{chap:met}Metodologia}
+
+A Metodologia utilizada no desenvolvimento do projeto é o \textit{Scrum}, de acordo com o ~\cite{VELUSCRUM}, \textit{Scrum} é um método ágil, projetado para entregar melhorias de alto valor ao produto iterativamente. O trabalho a ser realizado é listado no \textit{Product Backlog} e no início de cada \textit{sprint}, é realizada uma reunião (\textit{Sprint Planning}) para definir quais itens do backlog serão desenvolvidos durante a \textit{sprint}, estes itens são movidos do \textit{Product Backlog} para o \textit{Sprint Backlog}. Durante as \textit{Sprints}, uma reunião chamada de \textit{Daily Scrum} é feita para todo o time acompanhar o andamento da \textit{Sprint}. No se fim, é feita a demonstração das funcionalidades desenvolvidas durante a \textit{Sprint} na reunião de \textit{Sprint Review}.
+
+O \textit{Scrum} possui três principais funções, a de \textit{Product Owner}, responsável por definir as funcionalidades do produto, assim como priorizar os itens do \textit{Product Backlog}. Outra função é a de \textit{ScrumMaster}, responsável por garantir a execução das práticas de \textit{scrum} pela equipe, ele também participa ativamente no projeto das \textit{sprints}, garantindo que a equipe seja capaz de desenvolver tudo estipulado na mesma. Por último, tem a função do \textit{Scrum Team}, a equipe é responsável pelo desenvolvimento do produto.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\label{chap:desnv}Desenvolvimento}
+
+O \textit{Product Backlog} pode ser visto na imagem abaixo, nele há as \textit{stories} conhecidas até o momento. Estas stories estão divididas em suas áreas, como estudos, mapa, treinamento e análises. Estudos engloba stories referentes a conhecimentos nos quais preciso adquirir durante o treinamento. Mapa é referente ao desenvolvimento do layout a ser utilizado. Treinamento engloba tanto as métricas a serem colhidas durante o treinamento, mas também o desenvolvimento do treinamento. Análises se refere ao modo no qual os dados obtidos pelo treinamento serão conduzidos à uma conclusão sobre o mesmo.
+
+Visto que o \textit{Scrum Team} é composto por uma pessoa, não foi utilizada a coluna de responsável pela \textit{Story}, pois todas elas serão desenvolvidas pela mesma pessoa. A prioridade das \textit{Stories} foi definida pela ordem na qual serão desenvolvidas, iniciando pelas com prioridade mais elevada próximas a 1.
+
+\begin{figure}[htb]
+\begin{center}
+\Large Cronograma
+\end{center}
+\centering\includegraphics[width=.80\textwidth]{fig/ProductBkl.jpg}
+\end{figure}
+
+
+Diferente da primeira etapa do desenvolvimento onde cada \textit{Sprint} possuía 2 semanas, nesta segunda etapa cada \textit{Sprint} possui o tamanho de um mês e tem um peso máximo de 32 pontos. \textit{Stories} que não sejam finalizadas em uma \textit{Sprints} são transferidas para a próxima.
+
+A primeira \textit{Sprint} iniciou dia 16 de abril de 2018. O trabalho é realizado em 8 \textit{sprints}, no início de cada \textit{sprint} é feito o \textit{sprint planning}, onde são definidas as \textit{stories} que são movidas do \textit{product backlog} para o \textit{sprint backlog} durante o período da \textit{sprint}. No final de cada \textit{sprint}, duas \textit{sprint review} são feitas para analisar as entregas, uma com o técnico da equipe testada para avaliar os produtos entregues e uma com o professor orientador, para avaliar a monografia.
+
+O cronograma planejado na proposta pode ser visto no \textit{anexo A}. Durante o desenvolvimento da primeira etapa do projeto, não foi possível seguir a metodologia citada acima, isto ocorreu por falta de organização e tempo. Utilizar a metodologia virou um desafio para a segunda parte do projeto, porém, invés de utilizar \textit{sprints} de duas semanas, como proposto, as \textit{sprints} tem duração de um mês nesta segunda etapa.
+
+A segunda etapa de desenvolvimento possui quatro \textit{sprints}, como pode ser visto abaixo no cronograma atualizado.
+
+\begin{figure}[htb]
+\begin{center}
+\Large Cronograma
+\end{center}
+\centering\includegraphics[width=.60\textwidth]{fig/Sprints.jpg}
+\end{figure}
+
+A segunda etapa de desenvolvimento possui quatro tipos de entregáveis. A monografia se refere a documentação do trabalho, estes entregáveis são avaliados pelo professor orientador no fim de cada \textit{sprint}. O produto se refere ao mapa a ser desenvolvido durante o trabalho, ele é avaliado pelos jogadores nos quais o treinamento é aplicado. O resultado dos treinamentos são arquivos com os dados do treinamento e um questionário respondido pelos atletas sobre o treinamento aplicado.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+ 
+ 
+\section{Infraestrutura}
+
+Visto que a arquitetura utilizada é a do CS:GO, é necessário que o usuário possua um computador capaz de carregar o jogo, podendo utilizar \textit{Linux}, \textit{Windows} ou \textit{MacOS}.
+
+Para iniciar o mapa desenvolvido, o usuário necessita colocar os arquivos do mapa dentro da pasta de mapas do CS:GO, que normalmente fica no caminho "\textit{C:/Program Files (x86)/Steam/steamapps/common/Counter-Strike Global Offensive/csgo/maps}".
+
+Com o mapa no local correto, o usuário pode entrar no jogo, abrir o console e digitar "\textit{map TrainingFading}". Isto faz com que o jogo crie um servidor local com o mapa do treinamento, permitindo o usuário utilizar o mapa com o mínimo de latência, diminuindo assim, o risco de dados incorretos.
+
+Com este método, o usuário utiliza o mapa em um servidor dentro de sua maquina, não possuindo nenhuma interferência externa, podendo utilizar mesmo sem internet. Diferente de um jogo competitivo, que possui dez jogadores e um servidor separados, em uma competição ou um jogo amador online, o servidor é o da \textit{Valve}, empresa dona do CS:GO, e os jogadores se conectam neste servidor de suas máquinas. Isto faz com que os jogadores possuam uma latência, podendo influenciar na qualidade do jogo quando elevada. Há uma alternativa a latência, que são os campeonatos presenciais, nestes campeonatos, há onze máquinas conectadas em \textit{lan}, sendo uma o servidor e as outras dez dos profissionais. Isto permite que todos os jogadores possuam uma latência mínima enquanto jogam.
+
+
+
+
+
+
+
+
+
+
+
+
+
