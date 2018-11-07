@@ -5,7 +5,7 @@ Com a implementação do sistema de níveis no \textit{CS:GO}, os jogadores quer
 
 \section{\label{sec:atual}Treinamento atual}
 
-O treinamento atual dos jogadores profissionais de CS:GO consiste em, além de jogar partidas diariamente, utilizar mapas de treino. Existem diversos mapas de treino, porém em sua grande maioria, o jogador nasce em um local do mapa e o objetivo é matar o maior número de \textit{bots}(jogadores controlados pelo computador) possível, normalmente, em uma sessão de treino de um profissional, ele elimina em torno de mil \textit{bots} e dura em média de 15 a 20 minutos.
+O treinamento atual dos jogadores profissionais de CS:GO consiste em, além de jogar partidas diariamente, utilizar mapas de treino. Existem diversos mapas de treino, porém em sua grande maioria, o jogador nasce em um local do mapa e o objetivo é matar o maior número possível de \textit{bots}(jogadores controlados pelo computador) , em uma sessão de treino, um profissional elimina em torno de mil \textit{bots} e dura em média de 15 a 20 minutos.
 
 \begin{figure}[htb]
 \begin{center}
@@ -22,8 +22,8 @@ Como podemos ver na imagem acima, o jogador nasce no centro do mapa, sem consegu
 
 \textit{Burst} é a técnica mais utilizada pelos jogadores profissionais, ela consiste em atirar cerca de 6 tiros consecutivos, parar de atirar por meio segundo e atirar mais 6 tiros. Esta técnica é muito forte pois em quase todas as armas utilizadas em um jogo profissional, o recuo dos primeiros 6 a 9 tiros são retos para cima, sendo facilmente controlado com um movimento para baixo do \textit{mouse}. O intervalo entre os tiros é utilizado para reiniciar o recuo da arma, fazendo com que os próximos tiros sejam precisos, assim como os primeiros. Mesmo esta técnica sendo muito eficaz, ela é treinada em duas partes, a primeira no treinamento de \textit{one tap} aprimorando a reação e o primeiro tiro da técnica, e a segunda no treinamento de \textit{burst} aprendendo a controlar os primeiros tiros da arma.
 
-\begin{figure}[htb]
-\centering\includegraphics[width=.90\textwidth]{fig/100kills.jpg}
+\begin{figure}[H]
+\centering\includegraphics[width=.50\textwidth]{fig/100kills.jpg}
 \begin{center}
 Figura 5.1 – Desafio das 100 kills
 \end{center}
@@ -34,11 +34,20 @@ O mapa mais utilizado para nivelar a acurácia dos jogadores pode ser visto na i
 Mesmo não sendo o objetivo principal do desafio, jogadores utilizam ele para treinar, comparando seu tempo com o dos outros com o objetivo de nivelar sua acurácia. Para isso, eles utilizam este desafio junto das técnicas de tiro descritas acima, executando ele cada vez com uma técnica diferente, descobrindo sua habilidade com cada técnica.
 
 
-\section{\label{sec:esv}Treinamento adaptativo com esvanecimento}
+\section{\label{sec:esv}Treinamento adaptativo utilizando esvanecimento}
 
-'O treinamento por esvanecimento pretende melhorar a acurácia do jogador através de uma mudança gradual da dificuldade do treino, transmitindo a acurácia de um alvo grande para um alvo pequeno, semelhante ao treinamento proposto em ~\cite{CEDRA07}, onde foi aplicado o esvanecimento para treinamento de lance livre do basquete, segundo o autor, o treinamento iniciava com uma cesta de basquete mais baixa e um aro com um raio maior que as medidas oficiais e ao longo do treinamento, de forma gradual e progressiva, o aro chegava as medidas oficiais do basquete.
+O treinamento adaptativo utilizando esvanecimento foi aplicado em duas técnicas de tiro diferentes, há opção de treinar o  \textit{One tap}, com o treinamento de reflexo e precisão; e o \textit{Spray}, com o treinamento de controle de recuo da arma.
 
-No treinamento proposto, o atleta pode utilizar as armas \textit{AK-47}, \textit{M4A4} ou \textit{M4A1-S}, as mais utilizadas no jogo. Em princípio, ele realiza alguns testes iniciais com o intuito de avaliar seu nível atual, estes testes também são utilizados para avaliar a evolução do atleta com o treinamento. Após ter seu nível avaliado, o mapa gera o treinamento ideal para o jogador.
+O treinamento de reflexo e precisão utiliza ambas técnicas de esvanecimento (\textit{fading in} e \textit{fading out}). Semelhante ao sistema proposto por ~\cite{ADAP06}, o treinamento utiliza ambas técnicas para de modo dinâmico, se adaptar ao nível do jogador da forma mais gradual possível, tentando transmitir a habilidade do jogador de uma dificuldade a outra.
+
+Há uma distância fixa do alvo, o jogador tem que atirar o mais rápido possível nos alvos que vão aparecendo na parece a sua frente. Estes alvos iniciam com um tamanho de 18x18 cm e de acordo com a habilidade do jogador, eles podem aumentar ou diminuir, o tamanho máximo do alvo é 36x36cm, visto que um personagem agachado possui 36cm de largura; e no mínimo 8x8cm, visto que este é o tamanho da cabeça de um personagem. O tamanho do alvo é modificado no fim de cada iteração, que tem um tamanho fixo de 10 alvos. Para calcular o tamanho do próximo alvo, o sistema utiliza o tempo médio até o acerto do alvo durante a iteração atual, somado a 0.1 segundo para cada erro do jogador, caso este resultado seja superior ou igual a 0.7 segundos, o sistema considera que na próxima iteração o alvo deve ser maior que o atual e caso contrário se o tempo for inferior a 0.7 segundos. Durante a execução do treinamento, o jogador pode optar por utilizar os rifles \textit{AK-47}, \textit{M4A4} ou a pistola \textit{Glock-18}, visto que estes são as armas mais utilizadas no jogo.
+
+O treinamento de controle de recuo da arma utiliza apenas uma das técnicas de esvanecimento, a de \textit{fading in}. O sistema utiliza esta técnica, para que de forma gradual e no tempo do jogador, o padrão de recuo das armas seja aprendido pelo jogador, de forma semelhante ao sistema proposto em ~\cite{CEDRA07}, onde foi aplicado o esvanecimento para treinamento de lance livre do basquete, segundo o autor, o treinamento iniciava com uma cesta de basquete mais baixa e um aro com um raio maior que as medidas oficiais e ao longo do treinamento, de forma gradual e progressiva, o aro chegava as medidas oficiais do basquete.
+
+No treinamento, o objetivo do atleta é dominar o padrão de recuo da arma. Para inciar o treinamento, o jogador deve escolher qual arma ele deseja utilizar a partir de duas opções, a \textit{AK-47} e a \textit{M4A4} visto que são as arma mais utilizadas profissionalmente. Há uma distância fixa do alvo, o jogador 
+
+
+utilizar as armas \textit{AK-47}, \textit{M4A4} ou \textit{M4A1-S}, as mais utilizadas no jogo. Em princípio, ele realiza alguns testes iniciais com o intuito de avaliar seu nível atual, estes testes também são utilizados para avaliar a evolução do atleta com o treinamento. Após ter seu nível avaliado, o mapa gera o treinamento ideal para o jogador.
 
 Assim como no treinamento desenvolvido por ~\cite{CEDRA07}, a dificuldade do treinamento é aumentada ao longo do tempo. No início, os alvos que aparecem na tela são grandes e com o tempo eles diminuem, aumentado a dificuldade de forma gradual e progressiva, minimizando o número de erros e dando estímulos sempre que o alvo for atingido corretamente. Com isso, conseguimos aplicar o esvanecimento ao treinamento.
 
